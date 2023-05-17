@@ -1,0 +1,113 @@
+@mixin mobile {
+  @media screen and (width <= 320px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (width > 320px) and (width <= 768px) {
+    @content;
+  }
+}
+
+.plans {
+  width: 100%;
+  min-height: 60vh;
+  padding: 10px;
+  background-color: #181818;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+  .plans_container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    .plans_card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px 20px;
+      gap: 20px;
+      border: none;
+      background-color: #1f1f1f;
+      color: #ffffff;
+      border-radius: 4px;
+
+      @include mobile {
+        padding: 10px;
+      }
+
+      &:hover {
+        -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+      }
+
+      h3 {
+        font-size: 1.7rem;
+
+        @include mobile {
+          font-size: 1rem;
+        }
+
+        @include tablet {
+          font-size: 1.4em;
+        }
+      }
+      span {
+        font-size: 2.5rem;
+        color: #ff3131;
+
+        @include mobile {
+          font-size: 1.2rem;
+        }
+
+        @include tablet {
+          font-size: 1.4em;
+        }
+      }
+
+      p {
+        font-size: 1.3rem;
+        text-align: justify;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        @include mobile {
+          font-size: 1rem;
+          text-align: left;
+        }
+
+        @include tablet {
+          font-size: 1.1em;
+        }
+      }
+
+      button {
+        padding: 12px 16px;
+        border: none;
+        background-color: #ff3131;
+        color: #ffffff;
+        font-weight: bold;
+        letter-spacing: 3px;
+        width: 100%;
+
+        &:hover {
+          cursor: pointer;
+          background-color: #d34646;
+        }
+      }
+    }
+  }
+}
