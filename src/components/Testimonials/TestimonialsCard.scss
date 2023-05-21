@@ -1,0 +1,22 @@
+.testimonialsCard {
+  width: 250px;
+  //   min-width: 250px;
+  height: 300px;
+  max-height: 350px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  //   justify-content: center;
+  background-color: #181818;
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  p {
+    text-align: left;
+    font-size: 0.9rem;
+  }
+}
